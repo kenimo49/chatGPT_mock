@@ -1,0 +1,2 @@
+# chatGPT_mock
+chatGPTを検証するためのアプリケーション
