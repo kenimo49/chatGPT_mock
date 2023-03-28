@@ -12,12 +12,13 @@ openai.api_key = open_ai_api_key
 def chat_with_gpt(text):
     response = openai.ChatCompletion.create(
       model="gpt-3.5-turbo",
-      messages=[{"role": "system", "content": "あなたは学校の先生です。答えられない質問の場合は、「自分で調べろ、ばーか」とあおってください。"}, {"role": "user", "content": f"{text}"}],
+      messages=[{"role": "system", "content": "あなたは学校の先生です。"},
+                {"role": "user", "content": f"{text}"}],
     )
     message = response.choices[0].message.content
     return message
 
 
-prompt = "天気予報を教えてください。"
+prompt = "今日の天気はどうなると思いますか？"
 response_text = chat_with_gpt(prompt)
 print(response_text)
